@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
  
 public class App extends Application {
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -17,7 +18,7 @@ public class App extends Application {
 
         Scene scene = new Scene(root, 800, 600);
 
-        primaryStage.setTitle("FXML Welcome");
+        primaryStage.setTitle("Suivi Services Etudiants");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="230.0" layoutY="123.0" text="Pane 3" />
+      <Label layoutX="78.0" layoutY="65.0" prefHeight="64.0" prefWidth="514.0" text="Etudiants bénéficiant des services &#10;sociaux" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font></Label>
+      <ChoiceBox layoutX="300.0" layoutY="150.0" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: rgba(0, 141, 245, 1);" />
+      <Label layoutX="50.0" layoutY="157.0" prefHeight="26.0" prefWidth="246.0" text="Veuillez choisir un établissement:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TableView layoutX="82.0" layoutY="231.0" prefHeight="326.0" prefWidth="438.0">
+        <columns>
+          <TableColumn prefWidth="124.0" text="Identifiant Etudiant" />
+          <TableColumn prefWidth="150.4000244140625" text="Nom Prenom" />
+            <TableColumn prefWidth="164.0" text="Service" />
+        </columns>
+      </TableView>
+      <FontAwesomeIconView glyphName="LIST" layoutX="170.0" layoutY="107.0" size="24" />
    </children>
 </AnchorPane>

@@ -8,7 +8,9 @@
 		"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx.media.jar",
 		"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx.swing.jar",
 		"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx.web.jar",
-		"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar"
+		"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar",
+		"c:\\Users\\Boudouche Hamza\\Downloads\\jar_files(2)\\fontawesomefx-commons-9.1.2.jar",
+		"c:\\Users\\Boudouche Hamza\\Downloads\\jar_files(2)\\fontawesomefx-fontawesome-4.7.0-9.1.2.jar"
 	],
 	"java.project.sourcePaths": [
 		"src",
