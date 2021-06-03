@@ -6,13 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="gestionEtudiantsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Panes.GestionEtudiantsController">
    <children>
-      <Button layoutX="197.0" layoutY="154.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="205.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Ajouter un etudiant" />
-      <Button layoutX="197.0" layoutY="230.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Rechercher un etudiant" />
-      <Button layoutX="196.0" layoutY="308.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Mettre a jour un etudiant" />
-      <Button layoutX="196.0" layoutY="387.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Supprimer un etudiant" />
+      <Button fx:id="btnAjoutEtudiant" layoutX="197.0" layoutY="154.0" mnemonicParsing="false" onAction="#switchToAjoutEtudiant" prefHeight="58.0" prefWidth="205.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Ajouter un etudiant" />
+      <Button fx:id="btnRechercheEtudiant" layoutX="197.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToRechercheEtudiant" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Rechercher un etudiant" />
+      <Button fx:id="btnMajEtudiant" layoutX="196.0" layoutY="308.0" mnemonicParsing="false" onAction="#switchToMajEtudiant" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Mettre a jour un etudiant" />
+      <Button fx:id="btnDelEtudiant" layoutX="196.0" layoutY="387.0" mnemonicParsing="false" onAction="#switchToDeleteEtudiant" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Supprimer un etudiant" />
       <Label layoutX="148.0" layoutY="76.0" text="Gestion des etudiants" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
          <font>
             <Font name="Verdana Bold" size="24.0" />

@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -7,10 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
 public class Controller {
-	@FXML Button b1;
-	@FXML Button b2;
-	@FXML Button b3;
-	@FXML Button b4;
+	@FXML Button btnGestionEtudiants;
+	@FXML Button btnGestionServices;
+	@FXML Button btnListEtudants;
+	@FXML Button btnImportData;
 	@FXML Pane mainPane;
 
 	@FXML void switchToPane1(ActionEvent event) throws IOException {
