@@ -19,7 +19,7 @@ create table etudiant(
 	etuddpt int,
 	etudtel varchar(10),
 	etudmail varchar(100),
-	etudrib bigint,
+	etudrib varchar(24),
 	cniepere varchar(10),
 	etudnomp varchar(20),
 	etudprep varchar(20),
@@ -36,15 +36,15 @@ create table etablissement(
 	codeetab int primary key,
 	desetab varchar(100),
 	etuddpm int,
-	foreign key(etuddpm) references etudiant(etuddpt) on delete cascade on update cascade
+	foreign key (etuddpm) references etudiant(etuddpt) on delete cascade on update cascade
 );
 
 create table filiere(
 	codeetab int,
 	codefil int,
 	desfil varchar(100),
-	primary key(codeetab,codefil),
-	foreign key(codeetab) references etablissement(codeetab) on delete cascade on update cascade
+	primary key (codeetab,codefil),
+	foreign key (codeetab) references etablissement(codeetab) on delete cascade on update cascade
 );
 
 create table inscription(
@@ -52,10 +52,10 @@ create table inscription(
 	etudetab int,
 	etudfil int,
 	etudinsc date,
-	primary key(etudid,etudetab,etudinsc),
-	foreign key(etudid) references etudiant(etudid) on delete cascade on update cascade,
-	foreign key(etudetab) references etablissement(codeetab) on delete cascade on update cascade,
-	foreign key(etudfil) references filiere(codefil) on delete cascade on update cascade
+	primary key (etudid,etudetab,etudinsc),
+	foreign key (etudid) references etudiant(etudid) on delete cascade on update cascade,
+	foreign key (etudetab) references etablissement(codeetab) on delete cascade on update cascade,
+	foreign key (etudfil) references filiere(codefil) on delete cascade on update cascade
 );
 
 create table servicesetud(
@@ -65,7 +65,7 @@ create table servicesetud(
 	etudcu int,
 	etudcmb int,
 	etudcmbo int,
-	primary key(etudid,etudans),
-	foreign key(etudid) references etudiant(etudid) on delete cascade on update cascade
+	primary key (etudid,etudans),
+	foreign key (etudid) references etudiant(etudid) on delete cascade on update cascade
 );
 
