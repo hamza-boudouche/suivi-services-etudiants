@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,22 +12,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Panes.ImportDataController">
    <children>
       <Label layoutX="50.0" layoutY="50.0" prefHeight="46.0" prefWidth="353.0" text="Importation des données" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
          <font>
             <Font name="Verdana Bold" size="24.0" />
          </font></Label>
-      <Label layoutX="50.0" layoutY="152.0" prefHeight="30.0" prefWidth="366.0" text="     Chemin vers le fichier contenant les données: ">
+      <Label layoutX="22.0" layoutY="178.0" prefHeight="30.0" prefWidth="366.0" text="     Chemin vers le fichier contenant les données: ">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <TextField layoutX="36.0" layoutY="222.0" prefHeight="26.0" prefWidth="354.0" />
-      <Button layoutX="394.0" layoutY="221.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Choisir un fichier " />
-      <FontAwesomeIconView glyphName="FILE" layoutX="530.0" layoutY="240.0" text="" wrappingWidth="12.000048828125045" />
+      <TextField fx:id="tfPath" layoutX="36.0" layoutY="210.0" prefHeight="26.0" prefWidth="354.0" />
+      <Button fx:id="btnChoisirFichier" layoutX="394.0" layoutY="209.0" mnemonicParsing="false" onAction="#getFile" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Choisir un fichier " />
+      <FontAwesomeIconView glyphName="FILE" layoutX="530.0" layoutY="226.0" text="" wrappingWidth="12.000048828125045" />
       <FontAwesomeIconView glyphName="DATABASE" layoutX="411.0" layoutY="81.0" size="24" wrappingWidth="23.200000000000045" />
-      <Button layoutX="215.0" layoutY="521.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="170.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Importer" />
-      <VBox layoutX="11.0" layoutY="283.0" prefHeight="223.0" prefWidth="578.0">
+      <Button fx:id="btnImporter" layoutX="215.0" layoutY="521.0" mnemonicParsing="false" onAction="#importer" prefHeight="46.0" prefWidth="170.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Importer" />
+      <VBox fx:id="vbDragTarget" layoutX="11.0" layoutY="283.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="223.0" prefWidth="578.0">
          <children>
             <Pane prefHeight="223.0" prefWidth="578.0" style="-fx-background-color: rgba(235, 235, 235, 0.35);">
                <children>
@@ -38,5 +41,19 @@
             </Pane>
          </children>
       </VBox>
+      <Label layoutX="131.0" layoutY="245.0" text="Utiliser des '/' au lieu de '\' meme sur WINDOWS" textFill="#7f8280" />
+      <Label layoutX="22.0" layoutY="129.0" text="     A importer dans la table : ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbTabels" layoutX="394.0" layoutY="129.0" prefHeight="26.0" prefWidth="170.0" promptText="Table" style="-fx-background-color: rgba(0, 141, 245, 1);">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:id="reihe" fx:value="Table1" />
+                <String fx:id="parallel" fx:value="Table2" />
+            </FXCollections>
+        </items>
+      </ComboBox>
    </children>
 </AnchorPane>

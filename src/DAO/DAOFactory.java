@@ -1,18 +1,6 @@
 package DAO;
 
 public class DAOFactory {
-	
-	public static BourseDAO getBourseDAO(){
-		return new BourseDAO();
-	}
-
-	public static CiteUnivDAO gCiteUnivDAO(){
-		return new CiteUnivDAO();
-	}
-
-	public static CouvMedicDAO getCouvMedicDAO(){
-		return new CouvMedicDAO();
-	}
 
 	public static EtablissementDAO gEtablissementDAO(){
 		return new EtablissementDAO();
@@ -26,15 +14,11 @@ public class DAOFactory {
 		return new FiliereDAO();
 	}
 
-	public static MereDAO getMereDAO(){
-		return new MereDAO();
+	public static InscriptionDAO getInscriptionDAO(){
+		return new InscriptionDAO();
 	}
 
-	public static PereDAO getPereDAO(){
-		return new PereDAO();
-	}
-
-	public static UnivDeptDAO gUnivDeptDAO(){
-		return new UnivDeptDAO();
+	public static ServiceEtudDAO gServiceEtudDAO(){
+		return new ServiceEtudDAO();
 	}
 }

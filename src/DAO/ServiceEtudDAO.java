@@ -2,30 +2,30 @@ package DAO;
 
 import java.util.List;
 
-import structure.UnivDept;
+import structure.ServiceEtud;
 
-public class UnivDeptDAO implements DAO<UnivDept>{
+public class ServiceEtudDAO implements DAO<ServiceEtud>{
 
 	@Override
-	public boolean insert(UnivDept t) {
+	public boolean insert(ServiceEtud t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public UnivDept get(int id) {
+	public ServiceEtud get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<UnivDept> getAll() {
+	public List<ServiceEtud> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean update(UnivDept t) {
+	public boolean update(ServiceEtud t) {
 		// TODO Auto-generated method stub
 		return false;
 	}

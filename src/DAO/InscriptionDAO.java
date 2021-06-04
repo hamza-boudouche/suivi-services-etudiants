@@ -2,30 +2,30 @@ package DAO;
 
 import java.util.List;
 
-import structure.Parent;
+import structure.Inscription;
 
-public class MereDAO implements DAO<Parent>{
+public class InscriptionDAO implements DAO<Inscription>{
 
 	@Override
-	public boolean insert(Parent t) {
+	public boolean insert(Inscription t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Parent get(int id) {
+	public Inscription get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Parent> getAll() {
+	public List<Inscription> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean update(Parent t) {
+	public boolean update(Inscription t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
