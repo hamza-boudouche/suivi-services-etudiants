@@ -2,8 +2,6 @@ package Panes;
 
 import java.io.File;
 
-import javax.swing.JComboBox;
-
 import DAO.ConnectionFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

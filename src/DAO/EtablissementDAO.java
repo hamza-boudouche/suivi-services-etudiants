@@ -45,7 +45,7 @@ public class EtablissementDAO implements DAO<Etablissement>{
 		try {
 			connection = ConnectionFactory.getConnection();
 			Statement statement = connection.createStatement();
-			String query = "select * from etablissement where idHopital = " + codeetab + ";";
+			String query = "select * from etablissement where codeetab = " + codeetab + ";";
 			ResultSet rs = statement.executeQuery(query);
 			if(rs.next()){
 				int etuddpm = rs.getInt("etuddpm");
