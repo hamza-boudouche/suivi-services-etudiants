@@ -35,28 +35,23 @@ create table etudiant(
 create table etablissement(
 	codeetab int primary key,
 	desetab varchar(100),
-	etuddpm int,
-	foreign key (etuddpm) references etudiant(etuddpt) on delete cascade on update cascade
-);
+	etuddpm int);
+
 
 create table filiere(
 	codeetab int,
 	codefil int,
 	desfil varchar(100),
-	primary key (codeetab,codefil),
-	foreign key (codeetab) references etablissement(codeetab) on delete cascade on update cascade
-);
+	primary key(codeetab,codefil),
+	foreign key(codeetab) references etablissement(codeetab) on delete cascade on update cascade);
 
 create table inscription(
 	etudid int,
 	etudetab int,
 	etudfil int,
 	etudinsc date,
-	primary key (etudid,etudetab,etudinsc),
-	foreign key (etudid) references etudiant(etudid) on delete cascade on update cascade,
-	foreign key (etudetab) references etablissement(codeetab) on delete cascade on update cascade,
-	foreign key (etudfil) references filiere(codefil) on delete cascade on update cascade
-);
+	primary key(etudid,etudetab,etudinsc),
+	foreign key(etudid) references etudiant(etudid) on delete cascade on update cascade);
 
 create table servicesetud(
 	etudid int,
@@ -65,7 +60,5 @@ create table servicesetud(
 	etudcu int,
 	etudcmb int,
 	etudcmbo int,
-	primary key (etudid,etudans),
-	foreign key (etudid) references etudiant(etudid) on delete cascade on update cascade
-);
-
+	primary key(etudid,etudans),
+	foreign key(etudid) references etudiant(etudid) on delete cascade on update cascade);
