@@ -33,7 +33,7 @@ public class EtablissementDAO implements DAO<Etablissement>{
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning");
 				alert.setHeaderText("Contrainte referentielle non respectée");
-				alert.setContentText("L'etablissement " + etablissement.getCodeTab() + " n'existe pas");
+				alert.setContentText("Le departement " + etablissement.getEtudDpm() + " n'existe pas");
 				alert.showAndWait();
 			}
 		}
@@ -127,7 +127,15 @@ public class EtablissementDAO implements DAO<Etablissement>{
 			Statement statement = connection.createStatement();
 			String query = "delete from etablissement where codeetab = " + id + ";";
 			int i = statement.executeUpdate(query);
-			return i == 1;
+			if(i != 1){
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Warning");
+				alert.setHeaderText("Erreur");
+				alert.setContentText("L'etablissement " + id + " n'existe pas");
+				alert.showAndWait();
+				return false;
+			}
+			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

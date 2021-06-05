@@ -27,7 +27,6 @@ public class Inscription {
 			"}";
 	}
 
-
 	public int getEtudId() {
 		return this.etudId;
 	}
