@@ -66,14 +66,14 @@ public class AjoutEtudiantController{
 		
     	Etudiant  e = new Etudiant(ide,cne,nomE,prenomE,sFamiliale,nationalite,dateNaissE,sexe,adresse,codePostal,ville,departement,telephone,mail,rib,cniep,nomP,prenomP,dateNaissP,dateDecesP,cniem,nomM,prenomM,dateNaissM,dateDecesM);
     	
-    	if(DAOFactory.gEtudiantDAO().insert(e)) {
+    	if(DAOFactory.getEtudiantDAO().insert(e)) {
     		return true;
     	}
     	else {
     		Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
-			alert.setContentText("L'étudiant n'a pas été ajouté!");
+			alert.setContentText("L'ï¿½tudiant n'a pas ï¿½tï¿½ ajoutï¿½!");
 			alert.showAndWait();
 			return false;
     	}
