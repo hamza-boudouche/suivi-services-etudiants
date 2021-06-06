@@ -132,7 +132,6 @@ public class RechercheEtudiantController {
 		tcetudddm.setCellValueFactory(
 			new PropertyValueFactory<EtudiantTableEntry,String>("etudddm")
 		);
-
 	}
 
 	@FXML void rechercher(){
