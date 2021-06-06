@@ -17,7 +17,7 @@ public class TableEntry {
 		this.etudiant = etudiant;
 		this.service = service;
 		this.idEtudiant = new SimpleStringProperty(((Integer) etudiant.getEtudID()).toString()); 
-		this.nomPrenomEtudiant = new SimpleStringProperty(etudiant.getEtudNom() + etudiant.getEtudPrenom());
+		this.nomPrenomEtudiant = new SimpleStringProperty(etudiant.getEtudNom() + " " + etudiant.getEtudPrenom());
 		this.bourse = new SimpleStringProperty(service.getEtudBo() == 0 ? " " : ((Integer) service.getEtudBo()).toString());
 		this.citeUniv = new SimpleStringProperty(service.getEtudCu() == 0 ? " " : ((Integer) service.getEtudCu()).toString());
 		this.couvMedic = new SimpleStringProperty(service.getEtudBo() == 0 ? " " : ((Integer) service.getEtudBo()).toString());

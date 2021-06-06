@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConnectionFactory {
-	public static final String URL = "jdbc:mysql://localhost:3306/projet?allowLoadLocalInfile=true";
+	public static final String URL = "jdbc:mysql://localhost:3306/suiviserviceetudiants?allowLoadLocalInfile=true";
 	public static final String USER = "root";
 	public static final String PASSWORD = System.getenv("PASSWORD");
 	public static final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";

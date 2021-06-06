@@ -2,11 +2,11 @@ package DAO;
 
 public class DAOFactory {
 
-	public static EtablissementDAO gEtablissementDAO(){
+	public static EtablissementDAO getEtablissementDAO(){
 		return new EtablissementDAO();
 	}
 
-	public static EtudiantDAO gEtudiantDAO(){
+	public static EtudiantDAO getEtudiantDAO(){
 		return new EtudiantDAO();
 	}
 

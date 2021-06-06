@@ -21,6 +21,6 @@
       <FontAwesomeIconView glyphName="LIST" layoutX="170.0" layoutY="107.0" size="24" />
       <Button fx:id="btnRechercher" layoutX="245.0" layoutY="212.0" mnemonicParsing="false" onAction="#rechercher" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Rechercher" />
       <HBox fx:id="hbTableContainer" layoutX="91.0" layoutY="287.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="432.0" />
-      <ComboBox fx:id="etablissement" layoutX="340.0" layoutY="154.0" onAction="#initElements" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: rgba(0, 141, 245, 1);" />
+      <ComboBox fx:id="etablissement" layoutX="340.0" layoutY="154.0" onAction="#initElements" onShowing="#initElements" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: rgba(0, 141, 245, 1);" />
    </children>
 </AnchorPane>

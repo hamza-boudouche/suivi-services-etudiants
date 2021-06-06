@@ -2,15 +2,12 @@ package Panes;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import DAO.DAOFactory;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -29,8 +26,10 @@ public class ListeEtudiantsController {
 	HBox hbTableContainer;
 
 	@FXML void initElements(){
-		List<Etablissement> etabs = DAOFactory.gEtablissementDAO().getAll();
+		List<Etablissement> etabs = DAOFactory.getEtablissementDAO().getAll();
+		System.out.println("i'm here");
 		for (Etablissement etab : etabs) {
+			System.out.println(etab);
 			etablissement.getItems().add(((Integer) etab.getCodeTab()).toString());
 		}
 	}
@@ -49,11 +48,10 @@ public class ListeEtudiantsController {
 		tvResultat.getColumns().addAll(tcIdEtudiant, tcNomPrenomEtudiant, tcService);
 
 		
-		Map<Etudiant, ServiceEtud> rawData = DAOFactory.gEtudiantDAO().getEtudiantServiceParEtab();
+		Map<Etudiant, ServiceEtud> rawData = DAOFactory.getEtudiantDAO().getEtudiantServiceParEtab(Integer.parseInt(etablissement.getValue()));
 		ObservableList<TableEntry> data = FXCollections.observableArrayList();
 		rawData.forEach((key, value) -> data.add(new TableEntry(key, value)));
 
-		
 		tcIdEtudiant.setCellValueFactory(
 			new PropertyValueFactory<TableEntry,String>("idEtudiant")
 		);
@@ -71,6 +69,7 @@ public class ListeEtudiantsController {
 		);
 
 		tvResultat.setItems(data);
+		hbTableContainer.getChildren().clear();
 		hbTableContainer.getChildren().add(tvResultat);
 	}
 }
