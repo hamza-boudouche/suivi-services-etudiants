@@ -3,7 +3,6 @@ package Panes;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.ZoneId;
 
 import DAO.DAOFactory;
 import javafx.event.ActionEvent;
@@ -36,7 +35,7 @@ public class AjoutEtudiantController{
 		String nationalite=txtNationalite.getText();
 		
 		LocalDate localDateE=dateNaissEtudiant.getValue();
-		Date dateNaissE = (Date) Date.from(localDateE.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date dateNaissE = Date.valueOf(localDateE);
 		
 		String sexe=txtSexe.getText();
 		String adresse=txtAdresse.getText();
@@ -51,18 +50,18 @@ public class AjoutEtudiantController{
 		String prenomP=txtPrenomPere.getText();
 		
 		LocalDate localDateP1=dateNaissPere.getValue();
-		Date dateNaissP=(Date) Date.from(localDateP1.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date dateNaissP = Date.valueOf(localDateP1);
 		LocalDate localDateP2=dateDecesPere.getValue();
-		Date dateDecesP=(Date) Date.from(localDateP2.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date dateDecesP = Date.valueOf(localDateP2);
 		
 		String cniem=txtCnieMere.getText();
 		String nomM=txtNomMere.getText();
 		String prenomM=txtPrenomMere.getText();
 		
 		LocalDate localDateM1=dateNaissMere.getValue();
-		Date dateNaissM=(Date) Date.from(localDateM1.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date dateNaissM = Date.valueOf(localDateM1);
 		LocalDate localDateM2=dateDecesMere.getValue();
-		Date dateDecesM=(Date) Date.from(localDateM2.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date dateDecesM = Date.valueOf(localDateM2);
 		
     	Etudiant  e = new Etudiant(ide,cne,nomE,prenomE,sFamiliale,nationalite,dateNaissE,sexe,adresse,codePostal,ville,departement,telephone,mail,rib,cniep,nomP,prenomP,dateNaissP,dateDecesP,cniem,nomM,prenomM,dateNaissM,dateDecesM);
     	
@@ -73,7 +72,7 @@ public class AjoutEtudiantController{
     		Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
-			alert.setContentText("L'�tudiant n'a pas �t� ajout�!");
+			alert.setContentText("L'etudiant n'a pas ete ajoute!");
 			alert.showAndWait();
 			return false;
     	}
