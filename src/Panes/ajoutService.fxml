@@ -23,28 +23,28 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="113.0" layoutY="281.0" text="Cité universitaire">
+      <Label layoutX="113.0" layoutY="279.0" text="Cité universitaire">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="101.0" layoutY="350.0" text="Couverture médicale">
+      <Label layoutX="101.0" layoutY="353.0" text="Couverture médicale">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="418.0" text="Organisme de couverture médicale">
+      <Label layoutX="54.0" layoutY="427.0" text="Organisme de couverture médicale">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtIdentifiant" layoutX="290.0" layoutY="56.0" />
-      <TextField fx:id="txtAnneeScolaire" layoutX="290.0" layoutY="131.0" />
-      <TextField fx:id="txtBourse" layoutX="290.0" layoutY="202.0" />
-      <TextField fx:id="txtCU" layoutX="290.0" layoutY="278.0" />
-      <TextField fx:id="txtCMB" layoutX="290.0" layoutY="347.0" />
-      <TextField fx:id="txtCMBO" layoutX="290.0" layoutY="415.0" />
-      <Button fx:id="buttonEnregistrer" layoutX="365.0" layoutY="509.0" mnemonicParsing="false" onAction="#enregistrer" text="Enregistrer">
+      <TextField fx:id="txtIdentifiant" layoutX="293.0" layoutY="56.0" prefHeight="26.0" prefWidth="202.0" promptText="Identifiant" />
+      <TextField fx:id="txtAnneeScolaire" layoutX="293.0" layoutY="131.0" prefHeight="26.0" prefWidth="202.0" promptText="Année scolaire" />
+      <TextField fx:id="txtBourse" layoutX="293.0" layoutY="202.0" prefHeight="26.0" prefWidth="202.0" promptText="Bourse" />
+      <TextField fx:id="txtCU" layoutX="293.0" layoutY="276.0" prefHeight="26.0" prefWidth="202.0" promptText="Cité universitaire" />
+      <TextField fx:id="txtCMB" layoutX="293.0" layoutY="350.0" prefHeight="26.0" prefWidth="202.0" promptText="Couverture médicale" />
+      <TextField fx:id="txtCMBO" layoutX="293.0" layoutY="423.0" prefHeight="26.0" prefWidth="202.0" promptText="Organisme de couverture médicale" />
+      <Button fx:id="buttonEnregistrer" layoutX="394.0" layoutY="491.0" mnemonicParsing="false" onAction="#enregistrer" text="Enregistrer">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
