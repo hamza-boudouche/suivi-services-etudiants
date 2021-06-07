@@ -38,12 +38,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtIdentifiant" layoutX="317.0" layoutY="114.0" prefHeight="26.0" prefWidth="202.0" />
-      <TextField fx:id="txtAnneeScolaire" layoutX="317.0" layoutY="189.0" prefHeight="26.0" prefWidth="202.0" />
-      <TextField fx:id="txtBourse" layoutX="317.0" layoutY="260.0" prefHeight="26.0" prefWidth="202.0" />
-      <TextField fx:id="txtCU" layoutX="317.0" layoutY="334.0" prefHeight="26.0" prefWidth="202.0" />
-      <TextField fx:id="txtCMB" layoutX="317.0" layoutY="408.0" prefHeight="26.0" prefWidth="202.0" />
-      <TextField fx:id="txtCMBO" layoutX="317.0" layoutY="481.0" prefHeight="26.0" prefWidth="202.0" />
+      <TextField fx:id="txtIdentifiant" layoutX="317.0" layoutY="114.0" prefHeight="26.0" prefWidth="202.0" promptText="identifiant de l'étudiant" />
+      <TextField fx:id="txtAnneeScolaire" layoutX="317.0" layoutY="189.0" prefHeight="26.0" prefWidth="202.0" promptText="année scolaire" />
+      <TextField fx:id="txtBourse" layoutX="317.0" layoutY="260.0" prefHeight="26.0" prefWidth="202.0" promptText="bourse" />
+      <TextField fx:id="txtCU" layoutX="317.0" layoutY="334.0" prefHeight="26.0" prefWidth="202.0" promptText="cité universitaire" />
+      <TextField fx:id="txtCMB" layoutX="317.0" layoutY="408.0" prefHeight="26.0" prefWidth="202.0" promptText="couverture médicale" />
+      <TextField fx:id="txtCMBO" layoutX="317.0" layoutY="481.0" prefHeight="26.0" prefWidth="202.0" promptText="organisme de couverture médicale" />
       <Button fx:id="buttonEnregistrer" layoutX="418.0" layoutY="536.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="50.0" prefWidth="122.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Enregistrer">
          <font>
             <Font name="System Bold" size="16.0" />

@@ -50,30 +50,30 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="txtIdentifiant" layoutX="120.0" layoutY="62.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtCNE" layoutX="120.0" layoutY="97.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtNomEtudiant" layoutX="120.0" layoutY="132.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtPrenomEtudiant" layoutX="120.0" layoutY="169.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtSFamiliale" layoutX="121.0" layoutY="203.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtNationalite" layoutX="122.0" layoutY="236.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtSexe" layoutX="120.0" layoutY="308.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtAdresse" layoutX="120.0" layoutY="346.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtCodePostal" layoutX="122.0" layoutY="385.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtVille" layoutX="122.0" layoutY="428.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtDept" layoutX="122.0" layoutY="464.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtTel" layoutX="123.0" layoutY="499.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtMail" layoutX="123.0" layoutY="531.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtRIB" layoutX="123.0" layoutY="562.0" prefHeight="26.0" prefWidth="175.0" />
-      <DatePicker fx:id="dateNaissEtudiant" layoutX="120.0" layoutY="270.0" />
-      <TextField fx:id="txtCniePere" layoutX="407.0" layoutY="57.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtNomPere" layoutX="408.0" layoutY="94.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtPrenomPere" layoutX="407.0" layoutY="127.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtCnieMere" layoutX="405.0" layoutY="295.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtNomMere" layoutX="405.0" layoutY="334.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="txtPrenomMere" layoutX="405.0" layoutY="372.0" prefHeight="26.0" prefWidth="175.0" />
-      <DatePicker fx:id="dateNaissPere" layoutX="407.0" layoutY="167.0" />
-      <DatePicker fx:id="dateDecesPere" layoutX="407.0" layoutY="207.0" />
-      <DatePicker fx:id="dateNaissMere" layoutX="404.0" layoutY="416.0" />
-      <DatePicker fx:id="dateDecesMere" layoutX="404.0" layoutY="451.0" />
+      <TextField fx:id="txtIdentifiant" layoutX="120.0" layoutY="62.0" prefHeight="26.0" prefWidth="175.0" promptText="identifiant" />
+      <TextField fx:id="txtCNE" layoutX="120.0" layoutY="97.0" prefHeight="26.0" prefWidth="175.0" promptText="cne" />
+      <TextField fx:id="txtNomEtudiant" layoutX="120.0" layoutY="132.0" prefHeight="26.0" prefWidth="175.0" promptText="nom" />
+      <TextField fx:id="txtPrenomEtudiant" layoutX="120.0" layoutY="169.0" prefHeight="26.0" prefWidth="175.0" promptText="prénom" />
+      <TextField fx:id="txtSFamiliale" layoutX="120.0" layoutY="203.0" prefHeight="26.0" prefWidth="175.0" promptText="situation familiale" />
+      <TextField fx:id="txtNationalite" layoutX="120.0" layoutY="236.0" prefHeight="26.0" prefWidth="175.0" promptText="nationalité" />
+      <TextField fx:id="txtSexe" layoutX="120.0" layoutY="308.0" prefHeight="26.0" prefWidth="175.0" promptText="sexe" />
+      <TextField fx:id="txtAdresse" layoutX="120.0" layoutY="346.0" prefHeight="26.0" prefWidth="175.0" promptText="adresse" />
+      <TextField fx:id="txtCodePostal" layoutX="120.0" layoutY="385.0" prefHeight="26.0" prefWidth="175.0" promptText="code postal" />
+      <TextField fx:id="txtVille" layoutX="120.0" layoutY="428.0" prefHeight="26.0" prefWidth="175.0" promptText="ville" />
+      <TextField fx:id="txtDept" layoutX="121.0" layoutY="464.0" prefHeight="26.0" prefWidth="175.0" promptText="département" />
+      <TextField fx:id="txtTel" layoutX="121.0" layoutY="499.0" prefHeight="26.0" prefWidth="175.0" promptText="téléphone" />
+      <TextField fx:id="txtMail" layoutX="121.0" layoutY="531.0" prefHeight="26.0" prefWidth="175.0" promptText="adresse mail" />
+      <TextField fx:id="txtRIB" layoutX="121.0" layoutY="562.0" prefHeight="26.0" prefWidth="175.0" promptText="rib" />
+      <DatePicker fx:id="dateNaissEtudiant" layoutX="120.0" layoutY="270.0" promptText="date de naissance" />
+      <TextField fx:id="txtCniePere" layoutX="407.0" layoutY="57.0" prefHeight="26.0" prefWidth="175.0" promptText="cnie" />
+      <TextField fx:id="txtNomPere" layoutX="408.0" layoutY="94.0" prefHeight="26.0" prefWidth="175.0" promptText="nom" />
+      <TextField fx:id="txtPrenomPere" layoutX="407.0" layoutY="127.0" prefHeight="26.0" prefWidth="175.0" promptText="prénom" />
+      <TextField fx:id="txtCnieMere" layoutX="405.0" layoutY="295.0" prefHeight="26.0" prefWidth="175.0" promptText="cnie" />
+      <TextField fx:id="txtNomMere" layoutX="405.0" layoutY="334.0" prefHeight="26.0" prefWidth="175.0" promptText="nom" />
+      <TextField fx:id="txtPrenomMere" layoutX="405.0" layoutY="372.0" prefHeight="26.0" prefWidth="175.0" promptText="prénom" />
+      <DatePicker fx:id="dateNaissPere" layoutX="407.0" layoutY="167.0" promptText="date de naissance" />
+      <DatePicker fx:id="dateDecesPere" layoutX="407.0" layoutY="207.0" promptText="date de décès" />
+      <DatePicker fx:id="dateNaissMere" layoutX="404.0" layoutY="416.0" promptText="date de naissance" />
+      <DatePicker fx:id="dateDecesMere" layoutX="404.0" layoutY="451.0" promptText="date de décès" />
    </children>
 </AnchorPane>
