@@ -3,12 +3,12 @@ package structure;
 public class ServiceEtud {
 	private int etudId;
 	private int etudAns;
-	private int etudBo;
-	private int etudCu;
-	private int etudCmb;
-	private int etudCmbo;
+	private Integer etudBo;
+	private Integer etudCu;
+	private Integer etudCmb;
+	private Integer etudCmbo;
 
-	public ServiceEtud(int etudId, int etudAns, int etudBo, int etudCu, int etudCmb, int etudCmbo) {
+	public ServiceEtud(int etudId, int etudAns, Integer etudBo, Integer etudCu, Integer etudCmb, Integer etudCmbo) {
 		this.etudId = etudId;
 		this.etudAns = etudAns;
 		this.etudBo = etudBo;
@@ -46,36 +46,35 @@ public class ServiceEtud {
 		this.etudAns = etudAns;
 	}
 
-	public int getEtudBo() {
+	public Integer getEtudBo() {
 		return this.etudBo;
 	}
 
-	public void setEtudBo(int etudBo) {
+	public void setEtudBo(Integer etudBo) {
 		this.etudBo = etudBo;
 	}
 
-	public int getEtudCu() {
+	public Integer getEtudCu() {
 		return this.etudCu;
 	}
 
-	public void setEtudCu(int etudCu) {
+	public void setEtudCu(Integer etudCu) {
 		this.etudCu = etudCu;
 	}
 
-	public int getEtudCmb() {
+	public Integer getEtudCmb() {
 		return this.etudCmb;
 	}
 
-	public void setEtudCmb(int etudCmb) {
+	public void setEtudCmb(Integer etudCmb) {
 		this.etudCmb = etudCmb;
 	}
 
-	public int getEtudCmbo() {
+	public Integer getEtudCmbo() {
 		return this.etudCmbo;
 	}
 
-	public void setEtudCmbo(int etudCmbo) {
+	public void setEtudCmbo(Integer etudCmbo) {
 		this.etudCmbo = etudCmbo;
 	}
-
 }

@@ -35,9 +35,9 @@ public class EtudiantDAO implements DAO<Etudiant> {
 			ps.setDate(7, t.getEtudNai());
 			ps.setString(8, t.getEtudSex());
 			ps.setString(9, t.getEtudad1());
-			ps.setInt(10, t.getEtudCps());
+			ps.setObject(10, t.getEtudCps(), java.sql.Types.INTEGER);
 			ps.setString(11, t.getEtudVil());
-			ps.setInt(12, t.getEtudDpt());
+			ps.setObject(12, t.getEtudDpt(), java.sql.Types.INTEGER);
 			ps.setString(13, t.getEtudTel());
 			ps.setString(14, t.getEtudMail());
 			ps.setString(15, t.getEtudRib());
@@ -211,9 +211,9 @@ public class EtudiantDAO implements DAO<Etudiant> {
 			ps.setDate(6, t.getEtudNai());
 			ps.setString(7, t.getEtudSex());
 			ps.setString(8, t.getEtudad1());
-			ps.setInt(9, t.getEtudCps());
+			ps.setObject(9, t.getEtudCps(), java.sql.Types.INTEGER);
 			ps.setString(10, t.getEtudVil());
-			ps.setInt(11, t.getEtudDpt());
+			ps.setObject(11, t.getEtudDpt(), java.sql.Types.INTEGER);
 			ps.setString(12, t.getEtudTel());
 			ps.setString(13, t.getEtudMail());
 			ps.setString(14, t.getEtudRib());

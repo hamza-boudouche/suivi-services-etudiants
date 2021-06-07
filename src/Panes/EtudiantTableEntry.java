@@ -39,7 +39,7 @@ public class EtudiantTableEntry {
 		this.etudprenom.set(etudiant.getEtudPrenom());
 		this.etudsfam.set(etudiant.getEtudsFam());
 		this.etudnat.set(etudiant.getEtudNat());
-		this.etudnai.set(etudiant.getEtudNai().toString());
+		this.etudnai.set(etudiant.getEtudNai() == null ? "" : etudiant.getEtudNai().toString());
 		this.etudesexe.set(etudiant.getEtudSex());
 		this.etudad1.set(etudiant.getEtudad1());
 		this.etudcps.set(((Integer)etudiant.getEtudCps()).toString());
@@ -51,12 +51,12 @@ public class EtudiantTableEntry {
 		this.cniepere.set(etudiant.getCniePere());
 		this.etudnomp.set(etudiant.getEtudNomP());
 		this.etudprep.set(etudiant.getEtudPreP());
-		this.etuddnp.set(etudiant.getEtudDNP().toString());
-		this.etudddp.set(etudiant.getEtudDDP() != null ? etudiant.getEtudDDP().toString() : " ");
+		this.etuddnp.set(etudiant.getEtudDNP() == null ? "" : etudiant.getEtudDNP().toString());
+		this.etudddp.set( etudiant.getEtudDDP() != null ? etudiant.getEtudDDP().toString() : " ");
 		this.cniemere.set(etudiant.getCnieMere());
 		this.etudnomm.set(etudiant.getEtudNomM());
 		this.etudprem.set(etudiant.getEtudPreM());
-		this.etuddnm.set(etudiant.getEtudDNM().toString());
+		this.etuddnm.set(etudiant.getEtudDNM() == null ? "" : etudiant.getEtudDNM().toString());
 		this.etudddm.set(etudiant.getEtudDDM() != null ? etudiant.getEtudDDM().toString() : " ");
 	}
 

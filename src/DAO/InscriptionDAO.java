@@ -22,7 +22,7 @@ public class InscriptionDAO implements DAO<Inscription>{
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO inscription VALUES (?, ?, ?, ?);");
 			ps.setInt(1, inscription.getEtudId());
 			ps.setInt(2, inscription.getEtudEtab());
-			ps.setInt(3, inscription.getEtudFil());
+			ps.setObject(3, inscription.getEtudFil(), java.sql.Types.INTEGER);
 			ps.setDate(4, inscription.getEtudInsc());
 			int i = ps.executeUpdate();
 			ps.close();
@@ -102,7 +102,7 @@ public class InscriptionDAO implements DAO<Inscription>{
 		try {
 			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement("update inscription set etudfil = ? where etudetab = " + inscription.getEtudEtab() + " and etudid = " + inscription.getEtudId() + " etudinsc = " + inscription.getEtudInsc() + " ;");
-			ps.setInt(1, inscription.getEtudFil());
+			ps.setObject(1, inscription.getEtudFil(), java.sql.Types.INTEGER);
 			int i = ps.executeUpdate();
 			ps.close();
 			connection.close();

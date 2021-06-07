@@ -21,14 +21,22 @@ public class DeleteEtudiantController {
 	
 	@FXML
 	public boolean supprimer(ActionEvent event) throws SQLException {
-		int id=Integer.parseInt(txtIdentifiant.getText());
-		
-		Etudiant e = DAOFactory.gEtudiantDAO().get(id);
+		int id;
+		try {
+			id=Integer.parseInt(txtIdentifiant.getText());
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setContentText("id etudiant invalide");
+			alert.showAndWait();
+			return false;
+		}
+		Etudiant e = DAOFactory.getEtudiantDAO().get(id);
 		if(e!=null) {
-			if(DAOFactory.gEtudiantDAO().delete(id)) {
+			if(DAOFactory.getEtudiantDAO().delete(id)) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning");
-				alert.setContentText("L'etudiant " + id + " a été supprimé");
+				alert.setContentText("L'etudiant " + id + " a ete supprime");
 				alert.showAndWait();
 				return true;
 			}
@@ -36,7 +44,7 @@ public class DeleteEtudiantController {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning");
 				alert.setHeaderText("Erreur");
-				alert.setContentText("L'etudiant " + id + " n'a pas été supprimé");
+				alert.setContentText("L'etudiant " + id + " n'existe pas");
 				alert.showAndWait();
 				return false;
 			}

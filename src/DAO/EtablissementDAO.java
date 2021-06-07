@@ -21,7 +21,7 @@ public class EtablissementDAO implements DAO<Etablissement>{
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO etablissement VALUES (?, ?, ?);");
 			ps.setInt(1, etablissement.getCodeTab());
 			ps.setString(2, etablissement.getDesEtab());
-			ps.setInt(3, etablissement.getEtudDpm());
+			ps.setObject(3, etablissement.getEtudDpm(), java.sql.Types.INTEGER);
 			int i = ps.executeUpdate();
 			ps.close();
 			connection.close();

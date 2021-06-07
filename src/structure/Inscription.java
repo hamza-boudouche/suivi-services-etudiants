@@ -5,11 +5,11 @@ import java.sql.Date;
 public class Inscription {
 	private int etudId;
 	private int etudEtab;
-	private int etudFil;
+	private Integer etudFil;
 	private Date etudInsc;
 
 
-	public Inscription(int etudId, int etudEtab, int etudFil, Date etudInsc) {
+	public Inscription(int etudId, int etudEtab, Integer etudFil, Date etudInsc) {
 		this.etudId = etudId;
 		this.etudEtab = etudEtab;
 		this.etudFil = etudFil;
@@ -43,11 +43,11 @@ public class Inscription {
 		this.etudEtab = etudEtab;
 	}
 
-	public int getEtudFil() {
+	public Integer getEtudFil() {
 		return this.etudFil;
 	}
 
-	public void setEtudFil(int etudFil) {
+	public void setEtudFil(Integer etudFil) {
 		this.etudFil = etudFil;
 	}
 

@@ -19,25 +19,105 @@ public class AjoutServiceController {
 	
 	@FXML
 	public boolean enregistrer(ActionEvent event) {
-		int id=Integer.parseInt(txtIdentifiant.getText());
-		int anneeScolaire=Integer.parseInt(txtAnneeScolaire.getText());
-		int bourse=Integer.parseInt(txtBourse.getText());
-		int cu=Integer.parseInt(txtCU.getText());
-		int cmb=Integer.parseInt(txtCMB.getText());
-		int cmbo=Integer.parseInt(txtCMBO.getText());
+		int id;
+		try {
+			id=Integer.parseInt(txtIdentifiant.getText());
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("id etudiant invalide");
+			alert.showAndWait();
+			return false;
+		}
+		int anneeScolaire;
+		try {
+			anneeScolaire=Integer.parseInt(txtAnneeScolaire.getText());
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("annee scolaire invalide");
+			alert.showAndWait();
+			return false;
+		}
+		Integer bourse;
+		try {
+			if(txtBourse.getText().equals("")){
+				bourse = null;
+			} else {
+				bourse=Integer.parseInt(txtBourse.getText());
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("bourse invalide");
+			alert.showAndWait();
+			return false;
+		}
+		Integer cu;
+		try {
+			if(txtCU.getText().equals("")){
+				cu = null;
+			} else {
+				cu = Integer.parseInt(txtCU.getText());
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("cite universitaire invalide");
+			alert.showAndWait();
+			return false;
+		}
+		Integer cmb;
+		try {
+			if(txtCMB.getText().equals("")){
+				cmb = null;
+			} else {
+				cmb=Integer.parseInt(txtCMB.getText());
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("couverture medicale invalide");
+			alert.showAndWait();
+			return false;
+		}
+		Integer cmbo;
+		try {
+			if(txtCMBO.getText().equals("")){
+				cmbo = null;
+			} else {
+				cmbo=Integer.parseInt(txtCMBO.getText());
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("organisme de couverture medicale invalide");
+			alert.showAndWait();
+			return false;
+		}
 		
 		ServiceEtud  s = new ServiceEtud(id, anneeScolaire, bourse, cu, cmb, cmbo);
-		
 		if(DAOFactory.gServiceEtudDAO().insert(s)) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Succes");
+			alert.setHeaderText("Succes");
+			alert.setContentText("Le service a ete ajoute!");
+			alert.showAndWait();
     		return true;
     	}
     	else {
     		Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
-			alert.setContentText("Le service n'a pas été ajouté!");
+			alert.setContentText("Le service n'a pas ete ajoute!");
 			alert.showAndWait();
 			return false;
-    	}		
+    	}
 	}
 }

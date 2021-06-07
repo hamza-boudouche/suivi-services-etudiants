@@ -8,46 +8,51 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Panes.AjoutServiceController">
    <children>
-      <Label layoutX="90.0" layoutY="59.0" text="Identifiant de l'étudiant">
+      <Label layoutX="114.0" layoutY="117.0" text="Identifiant de l'étudiant">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="121.0" layoutY="134.0" text="Année scolaire">
+      <Label layoutX="145.0" layoutY="192.0" text="Année scolaire">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="146.0" layoutY="205.0" text="Bourse">
+      <Label layoutX="170.0" layoutY="263.0" text="Bourse">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="113.0" layoutY="279.0" text="Cité universitaire">
+      <Label layoutX="137.0" layoutY="337.0" text="Cité universitaire">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="101.0" layoutY="353.0" text="Couverture médicale">
+      <Label layoutX="125.0" layoutY="411.0" text="Couverture médicale">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="427.0" text="Organisme de couverture médicale">
+      <Label layoutX="78.0" layoutY="485.0" text="Organisme de couverture médicale">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtIdentifiant" layoutX="293.0" layoutY="56.0" prefHeight="26.0" prefWidth="202.0" promptText="Identifiant" />
-      <TextField fx:id="txtAnneeScolaire" layoutX="293.0" layoutY="131.0" prefHeight="26.0" prefWidth="202.0" promptText="Année scolaire" />
-      <TextField fx:id="txtBourse" layoutX="293.0" layoutY="202.0" prefHeight="26.0" prefWidth="202.0" promptText="Bourse" />
-      <TextField fx:id="txtCU" layoutX="293.0" layoutY="276.0" prefHeight="26.0" prefWidth="202.0" promptText="Cité universitaire" />
-      <TextField fx:id="txtCMB" layoutX="293.0" layoutY="350.0" prefHeight="26.0" prefWidth="202.0" promptText="Couverture médicale" />
-      <TextField fx:id="txtCMBO" layoutX="293.0" layoutY="423.0" prefHeight="26.0" prefWidth="202.0" promptText="Organisme de couverture médicale" />
-      <Button fx:id="buttonEnregistrer" layoutX="394.0" layoutY="491.0" mnemonicParsing="false" onAction="#enregistrer" text="Enregistrer">
+      <TextField fx:id="txtIdentifiant" layoutX="317.0" layoutY="114.0" prefHeight="26.0" prefWidth="202.0" />
+      <TextField fx:id="txtAnneeScolaire" layoutX="317.0" layoutY="189.0" prefHeight="26.0" prefWidth="202.0" />
+      <TextField fx:id="txtBourse" layoutX="317.0" layoutY="260.0" prefHeight="26.0" prefWidth="202.0" />
+      <TextField fx:id="txtCU" layoutX="317.0" layoutY="334.0" prefHeight="26.0" prefWidth="202.0" />
+      <TextField fx:id="txtCMB" layoutX="317.0" layoutY="408.0" prefHeight="26.0" prefWidth="202.0" />
+      <TextField fx:id="txtCMBO" layoutX="317.0" layoutY="481.0" prefHeight="26.0" prefWidth="202.0" />
+      <Button fx:id="buttonEnregistrer" layoutX="418.0" layoutY="536.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="50.0" prefWidth="122.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Enregistrer">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Label layoutX="64.0" layoutY="47.0" text="Ajout Service" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

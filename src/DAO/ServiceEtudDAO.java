@@ -17,17 +17,16 @@ public class ServiceEtudDAO implements DAO<ServiceEtud>{
 
 	@Override
 	public boolean insert(ServiceEtud t) {
-		// TODO Auto-generated method stub
 		try {
 			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO servicesetud VALUES (?, ?, ?, ?, ?, ?);");
 			ps.setInt(1, t.getEtudId());
 			ps.setInt(2, t.getEtudAns());
-			ps.setInt(3, t.getEtudBo());
-			ps.setInt(4, t.getEtudCu());
-			ps.setInt(5, t.getEtudCmb());
-			ps.setInt(6, t.getEtudCmbo());
-			
+			ps.setObject(3, t.getEtudBo(), java.sql.Types.INTEGER);
+			ps.setObject(4, t.getEtudCu(), java.sql.Types.INTEGER);
+			ps.setObject(5, t.getEtudCmb(), java.sql.Types.INTEGER);
+			ps.setObject(6, t.getEtudCmbo(), java.sql.Types.INTEGER);
+			System.out.println(ps.toString());
 			int i = ps.executeUpdate();
 			ps.close();
 			connection.close();
@@ -47,7 +46,6 @@ public class ServiceEtudDAO implements DAO<ServiceEtud>{
 	}
 
 	public ServiceEtud get(int id, int anneeScolaire) {
-		// TODO Auto-generated method stub
 		try {
 			connection = ConnectionFactory.getConnection();
 			Statement statement = connection.createStatement();
@@ -88,7 +86,6 @@ public class ServiceEtudDAO implements DAO<ServiceEtud>{
 
 	@Override
 	public List<ServiceEtud> getAll() {
-		// TODO Auto-generated method stub
 		ArrayList<ServiceEtud> resultat = new ArrayList<ServiceEtud>();
 		try {
 			connection = ConnectionFactory.getConnection();
@@ -117,14 +114,13 @@ public class ServiceEtudDAO implements DAO<ServiceEtud>{
 
 	@Override
 	public boolean update(ServiceEtud t) {
-		// TODO Auto-generated method stub
 		try {
 			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement("update servicesetud set etudbo = ?, etudcu = ?, etudcmb = ?, etudcmbo = ? where etudid = " + t.getEtudId() + " and etudans = " + t.getEtudAns() +";");
-			ps.setInt(1, t.getEtudBo());
-			ps.setInt(2, t.getEtudCu());
-			ps.setInt(3, t.getEtudCmb());
-			ps.setInt(4, t.getEtudCmbo());
+			ps.setObject(1, t.getEtudBo(), java.sql.Types.INTEGER);
+			ps.setObject(2, t.getEtudCu(), java.sql.Types.INTEGER);
+			ps.setObject(3, t.getEtudCmb(), java.sql.Types.INTEGER);
+			ps.setObject(4, t.getEtudCmbo(), java.sql.Types.INTEGER);
 			int i = ps.executeUpdate();
 			ps.close();
 			connection.close();
@@ -145,7 +141,6 @@ public class ServiceEtudDAO implements DAO<ServiceEtud>{
 
 	
 	public boolean delete(int id,int anneeScolaire) {
-		// TODO Auto-generated method stub
 		connection = ConnectionFactory.getConnection();
 		try {
 			Statement statement = connection.createStatement();
@@ -170,9 +165,4 @@ public class ServiceEtudDAO implements DAO<ServiceEtud>{
 	public boolean delete(int id) {
 		return false;
 	}
-
-	
-	
-	
-	
 }

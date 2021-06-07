@@ -21,15 +21,33 @@ public class DeleteServiceController {
 	
 	@FXML
 	public boolean supprimer(ActionEvent event) throws SQLException {
-		int id=Integer.parseInt(txtIdentifiant.getText());
-		int anneeScolaire=Integer.parseInt(txtAnneeScolaire.getText());
+		int id;
+		try {
+			id=Integer.parseInt(txtIdentifiant.getText());
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setContentText("id etudiant invalide");
+			alert.showAndWait();
+			return false;
+		}
+		int anneeScolaire;
+		try {
+			anneeScolaire=Integer.parseInt(txtAnneeScolaire.getText());
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setContentText("annee scolaire invalide");
+			alert.showAndWait();
+			return false;
+		}
 		
 		ServiceEtud e = DAOFactory.gServiceEtudDAO().get(id, anneeScolaire);
 		if(e!=null) {
-			if(DAOFactory.gEtudiantDAO().delete(id)) {
+			if(DAOFactory.getEtudiantDAO().delete(id)) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning");
-				alert.setContentText("Le service de l'étudiant " + id + " pour l'année " + anneeScolaire + " a été supprimé");
+				alert.setContentText("Le service de l'etudiant " + id + " pour l'annee " + anneeScolaire + " a ete supprime");
 				alert.showAndWait();
 				return true;
 			}
@@ -37,7 +55,7 @@ public class DeleteServiceController {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning");
 				alert.setHeaderText("Erreur");
-				alert.setContentText("Le service de l'étudiant " + id + " pour l'année " + anneeScolaire + " n'a pas été supprimé");
+				alert.setContentText("Le service de l'etudiant " + id + " pour l'annee " + anneeScolaire + " n'existe pas");
 				alert.showAndWait();
 				return false;
 			}

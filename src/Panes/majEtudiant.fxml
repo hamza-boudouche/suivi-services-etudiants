@@ -1,83 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Panes.MajEtudiantController">
    <children>
-      <Text layoutX="130.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mise à jour des données" textAlignment="CENTER" wrappingWidth="340.0">
+      <Label layoutX="13.0" layoutY="62.0" prefHeight="18.0" prefWidth="143.0" text="Identifiant (obligatoir)" />
+      <Label layoutX="15.0" layoutY="100.0" text="CNE" />
+      <Label layoutX="14.0" layoutY="242.0" text="Nationalité" />
+      <Label layoutX="14.0" layoutY="276.0" text="Date de naisance" />
+      <Label layoutX="16.0" layoutY="352.0" text="Adresse" />
+      <Label layoutX="16.0" layoutY="314.0" text="Sexe" />
+      <Label layoutX="14.0" layoutY="210.0" text="Situation familiale" />
+      <Label layoutX="15.0" layoutY="135.0" text="Nom" />
+      <Label layoutX="15.0" layoutY="173.0" text="Prénom" />
+      <Label layoutX="16.0" layoutY="393.0" text="Code postal" />
+      <Label layoutX="316.0" layoutY="210.0" text="Date de décès" />
+      <Label layoutX="322.0" layoutY="18.0" text="Informations concernant le père">
          <font>
-            <Font name="Verdana Bold" size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="20.0" layoutY="157.0" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer l'identifiant de l'étudiant:">
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="15.0" layoutY="504.0" text="Téléphone" />
+      <Label layoutX="16.0" layoutY="434.0" text="Ville" />
+      <Label layoutX="311.0" layoutY="169.0" text="Date de naissance" />
+      <Label layoutX="320.0" layoutY="257.0" text="Informations concernant la mère">
          <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <TextField layoutX="270.0" layoutY="138.0" promptText="Entrer l'id" />
-      <Text layoutX="61.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse :" textAlignment="CENTER" wrappingWidth="100.0">
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="338.0" layoutY="132.0" text="Prénom" />
+      <Label layoutX="15.0" layoutY="465.0" text="Département" />
+      <Label layoutX="340.0" layoutY="59.0" text="CNIE" />
+      <Label layoutX="339.0" layoutY="96.0" text="Nom" />
+      <Label layoutX="16.0" layoutY="537.0" text="Adresse mail" />
+      <Label layoutX="17.0" layoutY="567.0" text="RIB" />
+      <Label layoutX="14.0" layoutY="18.0" text="Informations concernant l'étudiant">
          <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="60.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone :" textAlignment="CENTER" wrappingWidth="100.0">
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="321.0" layoutY="454.0" text="Date de décès" />
+      <Label layoutX="311.0" layoutY="419.0" text="Date de naissance" />
+      <Label layoutX="338.0" layoutY="374.0" text="Prénom" />
+      <Label layoutX="339.0" layoutY="298.0" text="CNIE" />
+      <Label layoutX="340.0" layoutY="337.0" text="Nom" />
+      <Button fx:id="buttonEnregistrer" layoutX="391.0" layoutY="518.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Mettre a jour ">
          <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="60.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail :" textAlignment="CENTER" wrappingWidth="100.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="47.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Situation familiale :" wrappingWidth="137.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="61.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RIB :" textAlignment="CENTER" wrappingWidth="100.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="33.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de décès de la mère :" textAlignment="CENTER" wrappingWidth="166.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="42.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de décès du   père :" textAlignment="CENTER" wrappingWidth="149.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Button layoutX="433.0" layoutY="171.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Valider">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <TextField layoutX="199.0" layoutY="213.0" prefHeight="25.0" prefWidth="203.0" promptText="Entrer la nouvelle adresse" />
-      <TextField layoutX="199.0" layoutY="261.0" prefHeight="25.0" prefWidth="203.0" promptText="Entrer le nouveau téléphone" />
-      <TextField layoutX="199.0" layoutY="307.0" prefHeight="25.0" prefWidth="203.0" promptText="Entrer le nouveau mail" />
-      <TextField layoutX="199.0" layoutY="354.0" prefHeight="25.0" prefWidth="203.0" promptText="Entrer la nouvelle situation" />
-      <TextField layoutX="199.0" layoutY="402.0" prefHeight="25.0" prefWidth="203.0" promptText="Entrer le nouveau rib" />
-      <Button layoutX="438.0" layoutY="520.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: rgba(0, 141, 245, 1);" text="Sauvegarder">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <DatePicker layoutX="199.0" layoutY="453.0" prefHeight="40.0" prefWidth="203.0" />
-      <DatePicker layoutX="199.0" layoutY="515.0" prefHeight="40.0" prefWidth="203.0" />
-      <FontAwesomeIconView glyphName="USER" layoutX="483.0" layoutY="86.0" size="30" wrappingWidth="9.571428298950195">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </FontAwesomeIconView>
-      <FontAwesomeIconView glyphName="SAVE" layoutX="444.0" layoutY="542.0" size="20" />
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TextField fx:id="txtIdentifiant" layoutX="128.0" layoutY="58.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtCNE" layoutX="128.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtNomEtudiant" layoutX="128.0" layoutY="128.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtPrenomEtudiant" layoutX="128.0" layoutY="165.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtSFamiliale" layoutX="129.0" layoutY="199.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtNationalite" layoutX="130.0" layoutY="232.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtSexe" layoutX="128.0" layoutY="304.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtAdresse" layoutX="128.0" layoutY="342.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtCodePostal" layoutX="130.0" layoutY="381.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtVille" layoutX="130.0" layoutY="424.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtDept" layoutX="130.0" layoutY="460.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtTel" layoutX="131.0" layoutY="495.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtMail" layoutX="131.0" layoutY="527.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtRIB" layoutX="131.0" layoutY="558.0" prefHeight="26.0" prefWidth="175.0" />
+      <DatePicker fx:id="dateNaissEtudiant" layoutX="128.0" layoutY="266.0" />
+      <TextField fx:id="txtCniePere" layoutX="410.0" layoutY="56.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtNomPere" layoutX="411.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtPrenomPere" layoutX="410.0" layoutY="126.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtCnieMere" layoutX="411.0" layoutY="292.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtNomMere" layoutX="411.0" layoutY="331.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="txtPrenomMere" layoutX="411.0" layoutY="369.0" prefHeight="26.0" prefWidth="175.0" />
+      <DatePicker fx:id="dateNaissPere" layoutX="410.0" layoutY="166.0" />
+      <DatePicker fx:id="dateDecesPere" layoutX="410.0" layoutY="206.0" />
+      <DatePicker fx:id="dateNaissMere" layoutX="410.0" layoutY="413.0" />
+      <DatePicker fx:id="dateDecesMere" layoutX="410.0" layoutY="448.0" />
    </children>
 </AnchorPane>

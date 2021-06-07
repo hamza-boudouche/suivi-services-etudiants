@@ -27,7 +27,17 @@ public class AjoutEtudiantController{
 	
 	@FXML
 	public boolean enregistrer(ActionEvent event ) throws SQLException{
-		int ide=Integer.parseInt(txtIdentifiant.getText());
+		int ide;
+		try {
+			ide = Integer.parseInt(txtIdentifiant.getText());
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("id etudiant invalide");
+			alert.showAndWait();
+			return false;
+		}
 		String cne=txtCNE.getText();
 		String nomE=txtNomEtudiant.getText();
 		String prenomE=txtPrenomEtudiant.getText();
@@ -35,13 +45,42 @@ public class AjoutEtudiantController{
 		String nationalite=txtNationalite.getText();
 		
 		LocalDate localDateE=dateNaissEtudiant.getValue();
-		Date dateNaissE = Date.valueOf(localDateE);
+		Date dateNaissE = localDateE == null ? null : Date.valueOf(localDateE);
 		
 		String sexe=txtSexe.getText();
 		String adresse=txtAdresse.getText();
-		int codePostal=Integer.parseInt(txtCodePostal.getText());
-		String ville=txtVille.getText();
-		int departement=Integer.parseInt(txtDept.getText());
+
+		Integer codePostal;
+		try {
+			if(txtCodePostal.getText().equals("")){
+				codePostal = null;
+			} else {
+				codePostal = Integer.parseInt(txtCodePostal.getText());
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("code postal invalide");
+			alert.showAndWait();
+			return false;
+		}
+		String ville = txtVille.getText();
+		Integer departement;
+		try {
+			if(txtDept.getText().equals("")){
+				departement = null;
+			} else {
+				departement=Integer.parseInt(txtDept.getText());
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("departement invalide");
+			alert.showAndWait();
+			return false;
+		}
 		String telephone=txtTel.getText();
 		String mail=txtMail.getText();
 		String rib=txtRIB.getText();
@@ -49,30 +88,34 @@ public class AjoutEtudiantController{
 		String nomP=txtNomPere.getText();
 		String prenomP=txtPrenomPere.getText();
 		
-		LocalDate localDateP1=dateNaissPere.getValue();
-		Date dateNaissP = Date.valueOf(localDateP1);
-		LocalDate localDateP2=dateDecesPere.getValue();
-		Date dateDecesP = Date.valueOf(localDateP2);
+		LocalDate localDateP1 = dateNaissPere.getValue();
+		Date dateNaissP = localDateP1 == null ? null : Date.valueOf(localDateP1);
+		LocalDate localDateP2 = dateDecesPere.getValue();
+		Date dateDecesP = localDateP2 == null ? null :Date.valueOf(localDateP2);
 		
 		String cniem=txtCnieMere.getText();
 		String nomM=txtNomMere.getText();
 		String prenomM=txtPrenomMere.getText();
 		
-		LocalDate localDateM1=dateNaissMere.getValue();
-		Date dateNaissM = Date.valueOf(localDateM1);
-		LocalDate localDateM2=dateDecesMere.getValue();
-		Date dateDecesM = Date.valueOf(localDateM2);
+		Date dateNaissM = dateNaissMere.getValue() == null ? null : Date.valueOf(dateNaissMere.getValue());
+		Date dateDecesM = dateDecesMere.getValue() == null ? null : Date.valueOf(dateDecesMere.getValue());
+
 		
     	Etudiant  e = new Etudiant(ide,cne,nomE,prenomE,sFamiliale,nationalite,dateNaissE,sexe,adresse,codePostal,ville,departement,telephone,mail,rib,cniep,nomP,prenomP,dateNaissP,dateDecesP,cniem,nomM,prenomM,dateNaissM,dateDecesM);
     	
     	if(DAOFactory.getEtudiantDAO().insert(e)) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Succes");
+			alert.setHeaderText("Succes");
+			alert.setContentText("L'etudiant a ete ajoute avec succes!");
+			alert.showAndWait();
     		return true;
     	}
     	else {
     		Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
-			alert.setContentText("L'etudiant n'a pas ete ajoute!");
+			alert.setContentText("L'etudiant n'a pas ete ajoute; l'etudiant " + ide + " existe deja");
 			alert.showAndWait();
 			return false;
     	}

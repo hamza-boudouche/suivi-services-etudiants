@@ -12,9 +12,9 @@ public class Etudiant {
 	private Date etudNai;
 	private String etudSex;
 	private String etudad1;
-	private int etudCps;
+	private Integer etudCps;
 	private String etudVil;
-	private int etudDpt;
+	private Integer etudDpt;
 	private String etudTel;
 	private String etudMail;
 	private String etudRib;
@@ -30,7 +30,7 @@ public class Etudiant {
 	private Date etudDDM;
 
 
-	public Etudiant(int etudID, String etudCne, String etudNom, String etudPrenom, String etudsFam, String etudNat, Date etudNai, String etudSex, String etudad1, int etudCps, String etudVil, int etudDpt, String etudTel, String etudMail, String etudRib, String cniePere, String etudNomP, String etudPreP, Date etudDNP, Date etudDDP, String cnieMere, String etudNomM, String etudPreM, Date etudDNM, Date etudDDM) {
+	public Etudiant(int etudID, String etudCne, String etudNom, String etudPrenom, String etudsFam, String etudNat, Date etudNai, String etudSex, String etudad1, Integer etudCps, String etudVil, Integer etudDpt, String etudTel, String etudMail, String etudRib, String cniePere, String etudNomP, String etudPreP, Date etudDNP, Date etudDDP, String cnieMere, String etudNomM, String etudPreM, Date etudDNM, Date etudDDM) {
 		this.etudID = etudID;
 		this.etudCne = etudCne;
 		this.etudNom = etudNom;
@@ -140,11 +140,11 @@ public class Etudiant {
 		this.etudad1 = atudad1;
 	}
 
-	public int getEtudCps() {
+	public Integer getEtudCps() {
 		return this.etudCps;
 	}
 
-	public void setEtudCps(int etudCps) {
+	public void setEtudCps(Integer etudCps) {
 		this.etudCps = etudCps;
 	}
 
@@ -156,11 +156,11 @@ public class Etudiant {
 		this.etudVil = etudVil;
 	}
 
-	public int getEtudDpt() {
+	public Integer getEtudDpt() {
 		return this.etudDpt;
 	}
 
-	public void setEtudDpt(int etudDpt) {
+	public void setEtudDpt(Integer etudDpt) {
 		this.etudDpt = etudDpt;
 	}
 
