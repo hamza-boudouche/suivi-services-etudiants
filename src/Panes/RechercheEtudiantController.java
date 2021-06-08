@@ -16,6 +16,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import structure.Etudiant;
 
+/**
+ * RechercheEtudiantController est la classe de controle associee a la fenetre rechercheEtudiant.fxml
+ * Ces dernieres permettent la recherche d'un (ou plusieurs etudiant) dans la base de donnees en utilisation la classe DAO correspondante 
+ * si les champs de recherche restent vides alors tous les resultats possibles vont etre affiches
+ */
 public class RechercheEtudiantController {
 	@FXML
 	TextField tfIdEdtudiant;
@@ -172,7 +177,7 @@ public class RechercheEtudiantController {
 				alert.showAndWait();
 			}
 		}
-
+		tvResultat.getItems().clear();
 		tvResultat.setItems(data);
 		hbTableContainer.getChildren().clear();
 		hbTableContainer.getChildren().add(tvResultat);

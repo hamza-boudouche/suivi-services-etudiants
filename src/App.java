@@ -12,8 +12,10 @@ public class App extends Application {
         launch(args);
     }
     
+    // methode principale appelee par l'API javaFX 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        // chargement et affichage de la fenetre principale sous forme de fichier fxml 
         Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
 
         Scene scene = new Scene(root, 800, 600);

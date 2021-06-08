@@ -12,6 +12,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import structure.ServiceEtud;
 
+/**
+ * Classe DAO permettant acces a la table "serviceetud"
+ */
 public class ServiceEtudDAO implements DAO<ServiceEtud>{
 	private Connection connection;
 

@@ -2,6 +2,9 @@ package structure;
 
 import java.sql.Date;
 
+/**
+ * Inscription est la classe associee a la table "inscription" de la base de donnees
+ */
 public class Inscription {
 	private int etudId;
 	private int etudEtab;
@@ -16,7 +19,7 @@ public class Inscription {
 		this.etudInsc = etudInsc;
 	}
 
-
+	// ajoutée pour des raisons de debogage
 	@Override
 	public String toString() {
 		return "{" +
@@ -27,6 +30,7 @@ public class Inscription {
 			"}";
 	}
 
+	// setters and getters
 	public int getEtudId() {
 		return this.etudId;
 	}

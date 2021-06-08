@@ -12,6 +12,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import structure.Inscription;
 
+/**
+ * Classe DAO permettant acces a la table "inscription"
+ */
 public class InscriptionDAO implements DAO<Inscription>{
 	private Connection connection;
 	

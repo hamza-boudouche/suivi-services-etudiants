@@ -3,6 +3,10 @@ package Panes;
 import javafx.beans.property.SimpleStringProperty;
 import structure.Etudiant;
 
+/**
+ * Cette classe joue le role d'une couche supplementaire en dessous de la classe Etudiant
+ * Elle permet l'ajout d'etudiants a une table de l'API javaFX
+ */
 public class EtudiantTableEntry {
 	private Etudiant etudiant;
 	private SimpleStringProperty etudid = new SimpleStringProperty();

@@ -1,5 +1,8 @@
 package structure;
 
+/**
+ * ServiceEtud est la classe associee a la table "servicesetud" de la base de donnees
+ */
 public class ServiceEtud {
 	private int etudId;
 	private int etudAns;
@@ -17,6 +20,7 @@ public class ServiceEtud {
 		this.etudCmbo = etudCmbo;
 	}
 
+	// ajoutée pour des raisons de debogage
 	@Override
 	public String toString() {
 		return "{" +
@@ -29,7 +33,7 @@ public class ServiceEtud {
 			"}";
 	}
 
-
+	// setters and getters
 	public int getEtudId() {
 		return this.etudId;
 	}

@@ -15,6 +15,13 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
+/**
+ * C'est la classe de control de la fentre d'import des données de fichier externe "importData.fxml"
+ * Elle permet de designer un fichier csv par plusieurs methodes:
+ *  + par son chemin absolue ecrit dans un champ de text
+ *  + en le choisissant a partir d'une fenetre de choix de fichier du systeme
+ *  + en le glissant a l'interieur d'une zone dans la fenetre affichee
+ */
 public class ImportDataController {
 	@FXML
 	Button btnChoisirFichier;
@@ -27,6 +34,7 @@ public class ImportDataController {
 	@FXML 
 	ComboBox cbTabels;
 
+	// ecrire le chemin dans la zone de texte
 	@FXML
 	void getFile() {
 		FileChooser fileChooser = new FileChooser();
@@ -39,6 +47,7 @@ public class ImportDataController {
 		}
 	}
 
+	// permettre d'accepter le glissement du fichier sur la fenetre
 	@FXML
 	void onDragOver(DragEvent event) {
 		if (event.getGestureSource() != vbDragTarget && event.getDragboard().hasFiles()) {
@@ -47,6 +56,7 @@ public class ImportDataController {
 		event.consume();
 	}
 
+	// recuperer le chemin absolue du fichier glissé eet l'ecrire dans la zone de texte
 	@FXML
 	void onDragDropped(DragEvent event) {
 		Dragboard db = event.getDragboard();
@@ -62,6 +72,7 @@ public class ImportDataController {
 		event.consume();
 	}
 
+	// permet d'importer les donnees du fichier dans une table deja specifiee a partir d'un comboBox (menu defilant)
 	@FXML
 	void importer() {
 		String pathString = tfPath.getText();
@@ -69,6 +80,7 @@ public class ImportDataController {
 		String table = (String) cbTabels.getValue();
 		int result = ConnectionFactory.importData(pathString, table);
 
+		// si le fichier n'est pas compatible
 		if(!pathString.endsWith(".csv")){
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
@@ -78,6 +90,7 @@ public class ImportDataController {
 			return;
 		}
 
+		// succes
 		if(result == 0){
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Succes");
@@ -86,6 +99,7 @@ public class ImportDataController {
 
 			alert.showAndWait();
 		} else {
+			// fichier introuvable
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur d'importation");

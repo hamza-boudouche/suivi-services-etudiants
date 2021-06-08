@@ -12,6 +12,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import structure.Filiere;
 
+/**
+ * Classe DAO permettant acces a la table "filiere"
+ */
 public class FiliereDAO implements DAO<Filiere>{
 	private Connection connection;
 	

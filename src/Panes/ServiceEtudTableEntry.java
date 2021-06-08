@@ -3,6 +3,10 @@ package Panes;
 import javafx.beans.property.SimpleStringProperty;
 import structure.ServiceEtud;
 
+/**
+ * Cette classe joue le role d'une couche supplementaire en dessous de la classe ServiceEtud
+ * Elle permet l'ajout de lignes a une table de l'API javaFX
+ */
 public class ServiceEtudTableEntry {
 	private ServiceEtud service;
 	private SimpleStringProperty etudid = new SimpleStringProperty();

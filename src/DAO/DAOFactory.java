@@ -1,5 +1,8 @@
 package DAO;
 
+/**
+ * Classe factory permettant d'avoir un acces directe a des instances des classes DAO
+ */
 public class DAOFactory {
 
 	public static EtablissementDAO getEtablissementDAO(){

@@ -14,6 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import structure.Etudiant;
 
+/**
+ * AjoutEtudiantController est la classe de controle associee a la fenetre ajoutEtudiant.fxml
+ * Ces dernieres permettent l'insertion d'un nouvel etudiant dans la base de donnees en utilisation la classe DAO correspondante 
+ */
 public class AjoutEtudiantController{
 	
 	@FXML
@@ -25,12 +29,15 @@ public class AjoutEtudiantController{
 	@FXML
 	private DatePicker dateNaissEtudiant, dateNaissPere, dateDecesPere, dateNaissMere, dateDecesMere;
 	
+	// methode associee au bouton d'ajout
 	@FXML
 	public boolean enregistrer(ActionEvent event ) throws SQLException{
 		int ide;
+		// gestion des erreurs
 		try {
 			ide = Integer.parseInt(txtIdentifiant.getText());
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
@@ -53,11 +60,13 @@ public class AjoutEtudiantController{
 		Integer codePostal;
 		try {
 			if(txtCodePostal.getText().equals("")){
+				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				codePostal = null;
 			} else {
 				codePostal = Integer.parseInt(txtCodePostal.getText());
 			}
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
@@ -69,11 +78,13 @@ public class AjoutEtudiantController{
 		Integer departement;
 		try {
 			if(txtDept.getText().equals("")){
+				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				departement = null;
 			} else {
 				departement=Integer.parseInt(txtDept.getText());
 			}
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
@@ -103,6 +114,7 @@ public class AjoutEtudiantController{
 		
     	Etudiant  e = new Etudiant(ide,cne,nomE,prenomE,sFamiliale,nationalite,dateNaissE,sexe,adresse,codePostal,ville,departement,telephone,mail,rib,cniep,nomP,prenomP,dateNaissP,dateDecesP,cniem,nomM,prenomM,dateNaissM,dateDecesM);
     	
+		// on utilise le pattern DAO etablit pour acceder a la base de donnees et ajouter un etudiant
     	if(DAOFactory.getEtudiantDAO().insert(e)) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Succes");
@@ -112,6 +124,7 @@ public class AjoutEtudiantController{
     		return true;
     	}
     	else {
+			// s'execute si l'id etudiant donne est deja utilise (c'est une cle primaire donc unique)
     		Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");

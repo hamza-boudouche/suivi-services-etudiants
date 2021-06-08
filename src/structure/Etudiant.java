@@ -2,6 +2,9 @@ package structure;
 
 import java.sql.Date;
 
+/**
+ * Etudiant est la classe associee a la table "etudiant" de la base de donnees
+ */
 public class Etudiant {
 	private int etudID;
 	private String etudCne;
@@ -58,6 +61,7 @@ public class Etudiant {
 		this.etudDDM = etudDDM;
 	}
 
+	// ajoutée pour des raisons de debogage
 	@Override
 	public String toString() {
 		return "{" +
@@ -68,6 +72,7 @@ public class Etudiant {
 			"}";
 	}
 
+	// setters and getters
 	public int getEtudID() {
 		return this.etudID;
 	}

@@ -1,5 +1,8 @@
 package structure;
 
+/**
+ * Filiere est la classe associee a la table "filiere" de la base de donnees
+ */
 public class Filiere {
 	public int codeEtab;
 	private int codeFil;
@@ -12,7 +15,7 @@ public class Filiere {
 		this.desFil = desFil;
 	}
 
-
+	// ajoutée pour des raisons de debogage
 	@Override
 	public String toString() {
 		return "{" +
@@ -22,7 +25,7 @@ public class Filiere {
 			"}";
 	}
 
-
+	// setters and getters
 	public int getCodeEtab() {
 		return this.codeEtab;
 	}

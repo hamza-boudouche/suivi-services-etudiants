@@ -15,6 +15,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import structure.ServiceEtud;
 
+/**
+ * RechercheServiceController est la classe de controle associee a la fenetre rechercheService.fxml
+ * Ces dernieres permettent la recherche d'un (ou plusieurs) service dans la base de donnees en utilisation la classe DAO correspondante 
+ * si les champs de recherche restent vides alors tous les resultats possibles vont etre affiches
+ */
 public class RechercheServiceController {
 	@FXML
 	TextField tfetudid;
@@ -98,7 +103,7 @@ public class RechercheServiceController {
 				alert.showAndWait();
 			}
 		}
-
+		tvResultats.getItems().clear();
 		tvResultats.setItems(data);
 	}
 }

@@ -14,6 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import structure.Etudiant;
 
+/**
+ * MajEtudiantController est la classe de controle associee a la fenetre majEtudiant.fxml
+ * Ces dernieres permettent la mise a joir d'un etudiant dans la base de donnees en utilisation la classe DAO correspondante 
+ */
 public class MajEtudiantController{
 	
 	@FXML
@@ -27,6 +31,7 @@ public class MajEtudiantController{
 	
 	@FXML
 	public boolean enregistrer(ActionEvent event ) throws SQLException{
+		// recuperer tout les donnees nouvelles
 		int ide;
 		try {
 			ide = Integer.parseInt(txtIdentifiant.getText());
@@ -53,11 +58,13 @@ public class MajEtudiantController{
 		Integer codePostal;
 		try {
 			if(txtCodePostal.getText().equals("")){
+				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				codePostal = null;
 			} else {
 				codePostal = Integer.parseInt(txtCodePostal.getText());
 			}
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
@@ -69,11 +76,13 @@ public class MajEtudiantController{
 		Integer departement;
 		try {
 			if(txtDept.getText().equals("")){
+				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				departement = null;
 			} else {
 				departement=Integer.parseInt(txtDept.getText());
 			}
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setHeaderText("Erreur");
@@ -100,6 +109,7 @@ public class MajEtudiantController{
 		Date dateNaissM = dateNaissMere.getValue() == null ? null : Date.valueOf(dateNaissMere.getValue());
 		Date dateDecesM = dateDecesMere.getValue() == null ? null : Date.valueOf(dateDecesMere.getValue());
 		
+		// verifier si l'etudiant sepecifie exite ou non au moyen du pattern DAO
 		Etudiant existingEtudiant = DAOFactory.getEtudiantDAO().get(ide);
 		if(existingEtudiant == null){
 			Alert alert = new Alert(AlertType.WARNING);
@@ -109,60 +119,63 @@ public class MajEtudiantController{
 			alert.showAndWait();
 		}
 
-		if(cne.equals("")){
+		// si l'utilisateur veut garder des valeurs intactes il utilise le caractere '_'
+		if(cne.equals("_")){
 			cne = existingEtudiant.getEtudCne();
 		}
-		if(nomE.equals("")){
+		if(nomE.equals("_")){
 			nomE = existingEtudiant.getEtudNom();
 		}
-		if(prenomE.equals("")){
+		if(prenomE.equals("_")){
 			prenomE = existingEtudiant.getEtudPrenom();
 		}
-		if(sFamiliale.equals("")){
+		if(sFamiliale.equals("_")){
 			sFamiliale = existingEtudiant.getEtudsFam();
 		}
-		if(nationalite.equals("")){
+		if(nationalite.equals("_")){
 			nationalite = existingEtudiant.getEtudNat();
 		}
-		if(sexe.equals("")){
+		if(sexe.equals("_")){
 			sexe = existingEtudiant.getEtudSex();
 		}
-		if(adresse.equals("")){
+		if(adresse.equals("_")){
 			adresse = existingEtudiant.getEtudad1();
 		}
-		if(ville.equals("")){
+		if(ville.equals("_")){
 			ville = existingEtudiant.getEtudVil();
 		}
-		if(telephone.equals("")){
+		if(telephone.equals("_")){
 			telephone = existingEtudiant.getEtudTel();
 		}
-		if(mail.equals("")){
+		if(mail.equals("_")){
 			mail = existingEtudiant.getEtudMail();
 		}
-		if(rib.equals("")){
+		if(rib.equals("_")){
 			rib = existingEtudiant.getEtudRib();
 		}
-		if(cniep.equals("")){
+		if(cniep.equals("_")){
 			cniep = existingEtudiant.getCniePere();
 		}
-		if(nomP.equals("")){
+		if(nomP.equals("_")){
 			nomP = existingEtudiant.getEtudNomP();
 		}
-		if(prenomP.equals("")){
+		if(prenomP.equals("_")){
 			prenomP = existingEtudiant.getEtudPreP();
 		}
-		if(cniem.equals("")){
+		if(cniem.equals("_")){
 			cniem = existingEtudiant.getCnieMere();
 		}
-		if(nomM.equals("")){
+		if(nomM.equals("_")){
 			nomM = existingEtudiant.getEtudNomM();
 		}
-		if(prenomM.equals("")){
+		if(prenomM.equals("_")){
 			prenomM = existingEtudiant.getEtudPreM();
 		}
 
+		//creation de l'etudiant mis a jour
 		Etudiant  newEtudiant = new Etudiant(ide,cne,nomE,prenomE,sFamiliale,nationalite,dateNaissE,sexe,adresse,codePostal,ville,departement,telephone,mail,rib,cniep,nomP,prenomP,dateNaissP,dateDecesP,cniem,nomM,prenomM,dateNaissM,dateDecesM);
 
+		// on utilise le pattern DAO etablit pour acceder a la base de donnees et mettre a jour l'etudiant
     	if(DAOFactory.getEtudiantDAO().update(newEtudiant)) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Success");

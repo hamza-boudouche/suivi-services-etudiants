@@ -16,6 +16,9 @@ import javafx.scene.control.Alert.AlertType;
 import structure.Etudiant;
 import structure.ServiceEtud;
 
+/**
+ * Classe DAO permettant acces a la table "etudiant"
+ */
 public class EtudiantDAO implements DAO<Etudiant> {
 	private Connection connection;
 
@@ -272,7 +275,7 @@ public class EtudiantDAO implements DAO<Etudiant> {
 		try {
 			connection = ConnectionFactory.getConnection();
 			Statement statement = connection.createStatement();
-			String query = "select * from etudiant join servicesetud on etudiant.etudid = servicesetud.etudid join inscription on servicesetud.etudans = year(inscription.etudinsc) where etudetab = " + etudetab + ";";
+			String query = "select * from etudiant join servicesetud on etudiant.etudid = servicesetud.etudid join inscription on servicesetud.etudans = year(inscription.etudinsc) where etudetab = " + etudetab + " and servicesetud.etudans = year(now());";
 			ResultSet rs = statement.executeQuery(query);
 			int etudid;
 			String etudcne;

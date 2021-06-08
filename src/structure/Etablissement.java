@@ -1,5 +1,8 @@
 package structure;
 
+/**
+ * Etablissement est la classe associee a la table "etablissement" de la base de donnees
+ */
 public class Etablissement {
 	private int codeTab;
 	private String desEtab;
@@ -12,7 +15,7 @@ public class Etablissement {
 		this.etudDpm = etudDpm;
 	}
 
-
+	// ajoutée pour des raisons de debogage
 	@Override
 	public String toString() {
 		return "{" +
@@ -22,6 +25,7 @@ public class Etablissement {
 			"}";
 	}
 
+	// setters and getters
 	public int getCodeTab() {
 		return this.codeTab;
 	}

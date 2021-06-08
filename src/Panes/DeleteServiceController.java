@@ -11,6 +11,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import structure.ServiceEtud;
 
+/**
+ * DeleteServiceController est la classe de controle associee a la fenetre deleteService.fxml
+ * Ces dernieres permettent la suppression d'un service de la base de donnees en utilisation la classe DAO correspondante 
+ */
 public class DeleteServiceController {
 	
 	@FXML
@@ -19,12 +23,14 @@ public class DeleteServiceController {
 	@FXML
 	private TextField txtIdentifiant, txtAnneeScolaire;
 	
+	// methode associee au bouton de suppression
 	@FXML
 	public boolean supprimer(ActionEvent event) throws SQLException {
 		int id;
 		try {
 			id=Integer.parseInt(txtIdentifiant.getText());
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setContentText("id etudiant invalide");
@@ -35,6 +41,7 @@ public class DeleteServiceController {
 		try {
 			anneeScolaire=Integer.parseInt(txtAnneeScolaire.getText());
 		} catch (NumberFormatException e) {
+			// s'execute si l'utilisateur ne donne pas un nombre
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Warning");
 			alert.setContentText("annee scolaire invalide");
@@ -42,8 +49,10 @@ public class DeleteServiceController {
 			return false;
 		}
 		
+		// on utilise le pattern DAO etablit pour acceder a la base de donnees et chercher si l'etudiant existe deja
 		ServiceEtud e = DAOFactory.gServiceEtudDAO().get(id, anneeScolaire);
 		if(e!=null) {
+			// on utilise le pattern DAO etablit pour acceder a la base de donnees et supprimer cet etudiant
 			if(DAOFactory.getEtudiantDAO().delete(id)) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning");

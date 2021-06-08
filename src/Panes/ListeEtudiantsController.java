@@ -17,6 +17,10 @@ import structure.Etablissement;
 import structure.Etudiant;
 import structure.ServiceEtud;
 
+/**
+ * GestionServiceController est la classe de controle associee a la fenetre gestionServices.fxml
+ * Elle permet d'afficher une liste des etudiants et de leurs services concernant l'annee courante par etablissement
+ */
 public class ListeEtudiantsController {
 	@FXML
 	ComboBox<String> etablissement;
@@ -25,15 +29,15 @@ public class ListeEtudiantsController {
 	@FXML
 	HBox hbTableContainer;
 
+	// recuperer tout les etablissement existants dans la base de donnees et les mettre dans le menu de choix defilant
 	@FXML void initElements(){
 		List<Etablissement> etabs = DAOFactory.getEtablissementDAO().getAll();
-		System.out.println("i'm here");
 		for (Etablissement etab : etabs) {
-			System.out.println(etab);
 			etablissement.getItems().add(((Integer) etab.getCodeTab()).toString());
 		}
 	}
 
+	// recuperer les resultat au moyen du pattern DAO et populer la table de l'API javaFX
 	@FXML
 	void rechercher(){
 		TableView<TableEntry> tvResultat = new TableView<TableEntry>();
@@ -68,6 +72,7 @@ public class ListeEtudiantsController {
 			new PropertyValueFactory<TableEntry,String>("couvMedic")
 		);
 
+		tvResultat.getItems().clear();
 		tvResultat.setItems(data);
 		hbTableContainer.getChildren().clear();
 		hbTableContainer.getChildren().add(tvResultat);

@@ -4,6 +4,10 @@ import javafx.beans.property.SimpleStringProperty;
 import structure.Etudiant;
 import structure.ServiceEtud;
 
+/**
+ * Cette classe joue le role d'une couche supplementaire en dessous des classes Etudiant et ServiceEtud
+ * Elle permet l'ajout de lignes a une table de l'API javaFX
+ */
 public class TableEntry {
 	private Etudiant etudiant;
 	private ServiceEtud service;
