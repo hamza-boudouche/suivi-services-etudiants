@@ -1,24 +1,15 @@
 {
-	"java.project.referencedLibraries": {
-		"include": [
-			"lib/**/*.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\jar_files(2)\\fontawesomefx-commons-9.1.2.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\jar_files(2)\\fontawesomefx-fontawesome-4.7.0-9.1.2.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.base.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.controls.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.fxml.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.graphics.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.media.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.swing.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.web.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\mysql-connector-java-8.0.23\\mysql-connector-java-8.0.23\\mysql-connector-java-8.0.23.jar"
-		],
-		"exclude": [
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar",
-			"c:\\Users\\Boudouche Hamza\\Downloads\\openjfx-11.0.2_windows-x64_bin-sdk(1)\\javafx-sdk-11.0.2\\lib\\javafx.graphics.jar"
-		]
-	},
+	"java.project.referencedLibraries": [
+		"lib/javafx.base.jar",
+		"lib/javafx.controls.jar",
+		"lib/javafx.fxml.jar",
+		"lib/javafx.graphics.jar",
+		"lib/javafx.media.jar",
+		"lib/javafx.swing.jar",
+		"lib/javafx.web.jar",
+		"lib/javafx-swt.jar",
+		"lib/mysql-connector-java-8.0.23.jar"
+	],
 	"java.project.sourcePaths": [
 		"src",
 		""

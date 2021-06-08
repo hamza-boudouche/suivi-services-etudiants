@@ -45,7 +45,7 @@ public class ConnectionFactory {
 		Connection connection = ConnectionFactory.getConnection();
 		try {
 			Statement statement = connection.createStatement();
-			String command = " LOAD DATA LOCAL INFILE '" + path + "' INTO TABLE " + table + " FIELDS TERMINATED BY \',\' " + " LINES TERMINATED BY \'\\n\'";
+			String command = " LOAD DATA LOCAL INFILE '" + path + "' INTO TABLE " + table + " FIELDS TERMINATED BY \',\'; ";
 			return statement.executeUpdate(command);
 		} catch (SQLException e) {
 			e.printStackTrace();
