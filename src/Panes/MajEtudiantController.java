@@ -43,6 +43,17 @@ public class MajEtudiantController{
 			alert.showAndWait();
 			return false;
 		}
+
+		// verifier si l'etudiant sepecifie exite ou non au moyen du pattern DAO
+		Etudiant existingEtudiant = DAOFactory.getEtudiantDAO().get(ide);
+		if(existingEtudiant == null){
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("l'etudiant " + ide + " n'existe pas");
+			alert.showAndWait();
+		}
+
 		String cne=txtCNE.getText();
 		String nomE=txtNomEtudiant.getText();
 		String prenomE=txtPrenomEtudiant.getText();
@@ -60,6 +71,8 @@ public class MajEtudiantController{
 			if(txtCodePostal.getText().equals("")){
 				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				codePostal = null;
+			} else if (txtCodePostal.getText().equals("_")) {
+				codePostal = existingEtudiant.getEtudCps();
 			} else {
 				codePostal = Integer.parseInt(txtCodePostal.getText());
 			}
@@ -78,7 +91,9 @@ public class MajEtudiantController{
 			if(txtDept.getText().equals("")){
 				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				departement = null;
-			} else {
+			} else if (txtDept.getText().equals("_")) {
+				departement = existingEtudiant.getEtudDpt();
+			}else {
 				departement=Integer.parseInt(txtDept.getText());
 			}
 		} catch (NumberFormatException e) {
@@ -109,15 +124,6 @@ public class MajEtudiantController{
 		Date dateNaissM = dateNaissMere.getValue() == null ? null : Date.valueOf(dateNaissMere.getValue());
 		Date dateDecesM = dateDecesMere.getValue() == null ? null : Date.valueOf(dateDecesMere.getValue());
 		
-		// verifier si l'etudiant sepecifie exite ou non au moyen du pattern DAO
-		Etudiant existingEtudiant = DAOFactory.getEtudiantDAO().get(ide);
-		if(existingEtudiant == null){
-			Alert alert = new Alert(AlertType.WARNING);
-			alert.setTitle("Warning");
-			alert.setHeaderText("Erreur");
-			alert.setContentText("l'etudiant " + ide + " n'existe pas");
-			alert.showAndWait();
-		}
 
 		// si l'utilisateur veut garder des valeurs intactes il utilise le caractere '_'
 		if(cne.equals("_")){

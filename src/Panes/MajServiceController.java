@@ -48,11 +48,26 @@ public class MajServiceController {
 			alert.showAndWait();
 			return false;
 		}
+
+		System.out.println(id + " - " + anneeScolaire);
+		ServiceEtud existingService = DAOFactory.gServiceEtudDAO().get(id, anneeScolaire);
+		// verifie si le service existe deja
+		if(existingService == null){
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Erreur");
+			alert.setContentText("Le service n'a pas ete ajoute!");
+			alert.showAndWait();
+			return false;
+		}
+
 		Integer bourse;
 		try {
 			if(txtBourse.getText().equals("")){
 				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				bourse = null;
+			} else if (txtBourse.getText().equals("_")) {
+				bourse = existingService.getEtudBo();
 			} else {
 				bourse=Integer.parseInt(txtBourse.getText());
 			}
@@ -70,6 +85,8 @@ public class MajServiceController {
 			if(txtCU.getText().equals("")){
 				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				cu = null;
+			} else if (txtCU.getText().equals("_")) {
+				cu = existingService.getEtudCu();
 			} else {
 				cu = Integer.parseInt(txtCU.getText());
 			}
@@ -87,6 +104,8 @@ public class MajServiceController {
 			if(txtCMB.getText().equals("")){
 				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				cmb = null;
+			} else if (txtCMB.getText().equals("_")) {
+				cmb = existingService.getEtudCmb();
 			} else {
 				cmb=Integer.parseInt(txtCMB.getText());
 			}
@@ -104,6 +123,8 @@ public class MajServiceController {
 			if(txtCMBO.getText().equals("")){
 				// si l'utilisateur laisse le champs vide, c'est qu'il veut que le champs soit null (vide)
 				cmbo = null;
+			} else if (txtCMBO.getText().equals("_")) {
+				cmbo = existingService.getEtudCmbo();
 			} else {
 				cmbo=Integer.parseInt(txtCMBO.getText());
 			}
@@ -117,16 +138,6 @@ public class MajServiceController {
 			return false;
 		}
 		
-		ServiceEtud existingService = DAOFactory.gServiceEtudDAO().get(id);
-		// verifie si le service existe deja
-		if(existingService == null){
-			Alert alert = new Alert(AlertType.WARNING);
-			alert.setTitle("Warning");
-			alert.setHeaderText("Erreur");
-			alert.setContentText("Le service n'a pas ete ajoute!");
-			alert.showAndWait();
-			return false;
-		}
 
 		// creation du service mis a jour
 		ServiceEtud newService = new ServiceEtud(id, anneeScolaire, bourse, cu, cmb, cmbo);
