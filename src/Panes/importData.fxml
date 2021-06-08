@@ -50,8 +50,11 @@
       <ComboBox fx:id="cbTabels" layoutX="394.0" layoutY="129.0" prefHeight="26.0" prefWidth="170.0" promptText="Table" style="-fx-background-color: rgba(0, 141, 245, 1);">
          <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:id="reihe" fx:value="Table1" />
-                <String fx:id="parallel" fx:value="Table2" />
+                <String fx:value="etudiant" />
+                <String fx:value="etablissement" />
+                <String fx:value="inscription" />
+                <String fx:value="servicesetud" />
+                <String fx:value="filiere" />
             </FXCollections>
         </items>
       </ComboBox>
